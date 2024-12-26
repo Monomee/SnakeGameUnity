@@ -31,6 +31,5 @@ public class MenuLogic : MonoBehaviour
         // Thực hiện khi nhấn nút
         Debug.Log("Game is quitting...");
         Application.Quit();
-
     }
 }

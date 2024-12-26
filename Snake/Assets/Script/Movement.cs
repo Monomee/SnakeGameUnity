@@ -16,7 +16,9 @@ public class Movement : MonoBehaviour
 
     private Vector2 moveDirection = Vector2.zero; 
     public float speed; // Tốc độ di chuyển
+    public float speedIncrease;
     private const float ORI_SPEED = 3f; //Tốc độ mặc định 
+    private bool isFirstBody = true;
 
     private List<Transform> _segments;
     public Transform body;
@@ -37,7 +39,7 @@ public class Movement : MonoBehaviour
  
         _segments = new List<Transform>();
         _segments.Add(this.transform);
-
+        //StartCoroutine(IncreaseSpeedOverTime());
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class Movement : MonoBehaviour
     {
         headDir(); //vị trí hướng đầu rắn
         moveDir(); //hướng đi 
-
+        
         for (int i = _segments.Count - 1; i > 0; i--)
         {
             Vector2 targetPosition = _segments[i - 1].position;
@@ -114,7 +116,11 @@ public class Movement : MonoBehaviour
     {
         Transform segment = Instantiate(this.body);
         segment.position = _segments[_segments.Count - 1].position;
-
+        if (isFirstBody)
+        {
+            segment.GetComponent<BoxCollider2D>().enabled = false;
+            isFirstBody = false;
+        }
         _segments.Add(segment);
     }
     private IEnumerator MoveSegment(Transform segment, Vector2 targetPosition, float delay)
@@ -122,13 +128,23 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(delay);
         segment.position = targetPosition;
     }
+    //private IEnumerator IncreaseSpeedOverTime()
+    //{
+    //    while (true)
+    //    {
+    //        yield return new WaitForSeconds(20f); // Chờ 20 giây
+    //        speed += speedIncrease; // Tăng tốc độ
+    //        Debug.Log($"New speed: {speed}");
+    //    }
+    //}
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Food")
         {
             eatingSound.Play();
             Grow();
-        } else if (other.tag == "Wall" )
+        }
+        else if (other.tag == "Wall" || other.tag == "Body")
         {
             deadSound.Play();
             boomEffect.Play();
@@ -153,7 +169,4 @@ public class Movement : MonoBehaviour
         }
 
     }
-
-    
-
 }

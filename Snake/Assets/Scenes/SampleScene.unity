@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 70203872}
   - component: {fileID: 70203874}
   - component: {fileID: 70203875}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70203871}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 346815284}
   - component: {fileID: 346815285}
   - component: {fileID: 346815286}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Snake
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -804,8 +804,8 @@ Transform:
   m_LocalScale: {x: 0.6724257, y: 0.6724257, z: 0.6724257}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1544390818}
   - {fileID: 1982819334}
+  - {fileID: 1544390818}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &346815285
@@ -823,6 +823,7 @@ MonoBehaviour:
   snakeHead: {fileID: 1544390817}
   logicManagement: {fileID: 784524423}
   speed: 3
+  speedIncrease: 0.5
   body: {fileID: 3072091430388447417, guid: 69980875ca34ba2469f72926232e3cf5, type: 3}
   eatingSound: {fileID: 204930311}
   deadSound: {fileID: 1308159543}
@@ -1566,7 +1567,7 @@ GameObject:
   - component: {fileID: 664982055}
   - component: {fileID: 664982057}
   - component: {fileID: 664982058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1647,7 +1648,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664982054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2515,7 +2516,7 @@ GameObject:
   - component: {fileID: 1326854510}
   - component: {fileID: 1326854512}
   - component: {fileID: 1326854513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2596,7 +2597,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326854509}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -2839,7 +2840,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1544390818}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SnakeHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3132,7 +3133,7 @@ GameObject:
   - component: {fileID: 1646746529}
   - component: {fileID: 1646746531}
   - component: {fileID: 1646746532}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3213,7 +3214,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646746528}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -3614,7 +3615,7 @@ GameObject:
   - component: {fileID: 1982819334}
   - component: {fileID: 1982819333}
   - component: {fileID: 1982819332}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8485,7 +8486,7 @@ Transform:
   m_GameObject: {fileID: 1982819331}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.04461491, y: 0, z: 0}
+  m_LocalPosition: {x: 0.04461491, y: 0, z: -0.57}
   m_LocalScale: {x: 1.4871533, y: 1.4871533, z: 1.4871533}
   m_ConstrainProportionsScale: 0
   m_Children: []
