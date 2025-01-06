@@ -22,7 +22,7 @@ public class Food : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player")) 
         {
             RandomPos();
             logic.AddScore(1);

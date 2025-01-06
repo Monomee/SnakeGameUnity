@@ -110,29 +110,29 @@ public class Movement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Food")
+        if (other.CompareTag("Food"))
         {
             audioController.eatingSound.Play();
             snakeManager.Grow();
         }
-        else if (other.tag == "Wall" || other.tag == "Body")
+        else if (other.CompareTag("Wall") || other.CompareTag("Body"))
         {
             audioController.deadSound.Play();
             boomEffect.Play();
             uiPlay.LoadGameOverScreen();
-        } else if(other.tag == "SuperFood")
+        } else if(other.CompareTag("SuperFood"))
         {
             audioController.eatingSound.Play();
             snakeManager.Grow();
             logicManagement.GetComponent<Logic>().SuperFoodEffect();//+5d
             logicManagement.GetComponent<SpecialItem>().OnEaten();
-        } else if( other.tag == "BlindBox")
+        } else if( other.CompareTag("BlindBox"))
         {
             audioController.eatingSound.Play();
             logicManagement.GetComponent<Logic>().BlindBoxEffect();//ngẫu nhiên +/- 10d
             logicManagement.GetComponent<SpecialItem>().OnEaten();
         }
-        else if(other.tag == "SpeedBoost")
+        else if(other.CompareTag("SpeedBoost"))
         {
             audioController.eatingSound.Play();
             logicManagement.GetComponent<Logic>().SpeedBoostEffect();//x2 tốc độ
