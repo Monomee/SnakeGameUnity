@@ -7,7 +7,7 @@ public class Food : MonoBehaviour
 {
     public BoxCollider2D gridArea;
     public Logic logic;
-    public UIManager uiPlay;
+    //public UIManager uiPlay;
     public Logic logicManager;
     private void Start()
     {
@@ -26,7 +26,7 @@ public class Food : MonoBehaviour
         {
             RandomPos();
             logic.AddScore(1);
-            uiPlay.DisplayScore();
+            UIManager.Instance.DisplayScore();
         }
     }
 }

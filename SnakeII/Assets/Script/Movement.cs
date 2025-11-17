@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
 
     public SnakeManager snakeManager;
     public GameObject logicManagement;
-    public UIManager uiPlay; 
+    //public UIManager uiPlay; 
     public AudioController audioController;
 
     private Vector2 moveDirection = Vector2.zero; 
@@ -119,7 +119,7 @@ public class Movement : MonoBehaviour
         {
             audioController.deadSound.Play();
             boomEffect.Play();
-            uiPlay.LoadGameOverScreen();
+            UIManager.Instance.LoadGameOverScreen();
         } else if(other.CompareTag("SuperFood"))
         {
             audioController.eatingSound.Play();

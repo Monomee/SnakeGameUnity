@@ -9,7 +9,7 @@ public class Logic : MonoBehaviour
     private int playerScore = 0;
     private int snakeLength = 0;
     public GameObject movement;
-    public UIManager uiManager;
+    //public UIManager uiManager;
     public SnakeManager snakeManager;
 
     public int GetPlayerScore() { return playerScore; }
@@ -45,7 +45,7 @@ public class Logic : MonoBehaviour
     {
         Debug.Log("superfood effect");
         AddScore(5);
-        uiManager.DisplayScore();
+        UIManager.Instance.DisplayScore();
     }
     private IEnumerator SpeedBoostCoroutine()
     {
@@ -64,6 +64,6 @@ public class Logic : MonoBehaviour
         Debug.Log("blindbox effect");
         float rand = Random.Range(1f, 10f);
         AddScore(((int)rand % 2 == 0) ? 10 : -10);
-        uiManager.DisplayScore();
+        UIManager.Instance.DisplayScore();
     }
 }

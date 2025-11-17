@@ -6,6 +6,17 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
+
+    private void OnEnable()
+    {
+        Instance = this;
+    }
+    private void OnDisable()
+    {
+        Instance = null;
+    }
+
     public GameObject menuScreen;
     public GameObject guideScreen;
 
